@@ -3,15 +3,18 @@ from tkinter import Tk, filedialog
 
 FS = 500  # Sampling frequency
 
-def select_up_to_three_files():
-    print("[INFO] Opening file dialog for up to 3 Excel files...")
+def select_files():
+    print("[INFO] Opening file dialog: Select Excel files...")
     root = Tk()
     root.withdraw()
     file_paths = filedialog.askopenfilenames(
-        title="Select up to 3 Excel Files",
+        title="Select two or more Excel Files",
         filetypes=[("Excel files", "*.xlsx *.xls *.csv")]
     )
-    selected = list(file_paths)[:3]
+    selected = list(file_paths)
+    if len(selected) < 1:
+        print("[ERROR] Please select at least one file.")
+        return []
     print(f"[INFO] Selected files: {selected}")
     return selected
 

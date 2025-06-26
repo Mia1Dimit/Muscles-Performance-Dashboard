@@ -153,8 +153,18 @@ def fatigue_pipeline(df, mvc_raw, mvc_rectify, mvc_rms, set_mvc_rms):
         "norm_rectify": norm_rectify,
         "norm_rms": norm_rms,
         "time_fi": time_fi,
+        "indices": indices,
         "features": features,
         "fatigue_index": fatigue_index,
         "fi_filtered": fi_filtered,
-        "active_segments": active_segments
+        "active_segments": active_segments,
+        # Grouped features (extract columns)
+        "rms_val": features[:, 0],
+        "mnf_arv_ratio": features[:, 1],
+        "ima_diff": features[:, 2],
+        "emd_mdf1": features[:, 3],
+        "emd_mdf2": features[:, 4],
+        "fluctuation_range": features[:, 5],
+        "fluctuation_var": features[:, 6],
+        "fluctuation_mean_diff": features[:, 7]
     }
