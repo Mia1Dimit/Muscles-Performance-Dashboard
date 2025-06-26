@@ -91,3 +91,6 @@ venv.bak/
 *.bak
 *.swp
 *.swo
+
+# Ignore json files
+*.json
