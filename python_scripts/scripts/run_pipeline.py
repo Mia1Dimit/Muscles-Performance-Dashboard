@@ -108,9 +108,10 @@ def main():
         print(row)
 
     # Prompt for metadata and export
-    athlete_id, date = prompt_metadata()
+    num_sets = len(dfs)
+    athlete_id, dates = prompt_metadata(num_sets)
     session_id = get_next_session_id(athlete_id)
-    export_json(athlete_id, session_id, date, pipeline_results)
+    export_json(athlete_id, session_id, dates, pipeline_results)
 
 if __name__ == "__main__":
     main()
